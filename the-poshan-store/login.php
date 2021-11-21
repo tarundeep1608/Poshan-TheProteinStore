@@ -96,7 +96,7 @@ session_start();
           </div>
         </div>
         <form class="login-form" method="POST" action="" name="signin-form">
-          <input type="text" placeholder="Enter email" name="username" required/>
+          <input type="text" placeholder="Enter email" name="email" required/>
           <input type="password" placeholder="Enter password" name="password" required/>
           <button name="login_button">login</button>
           <br><br>
@@ -109,10 +109,10 @@ session_start();
         <?php
             include('config.php');
             if (isset($_POST['login_button'])) {
-                $username = $_POST['username'];
+                $email = $_POST['email'];
                 $password = $_POST['password'];
-                $query = $connection->prepare("SELECT * FROM users WHERE username=:username");
-                $query->bindParam("username", $username, PDO::PARAM_STR);
+                $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
+                $query->bindParam("email", $email, PDO::PARAM_STR);
                 $query->execute();
                 $result = $query->fetch(PDO::FETCH_ASSOC);
                 if (!$result) {
@@ -126,7 +126,7 @@ session_start();
                         echo '</script>';
 
                     } else {
-                        echo '<p class="error">Username password combination is wrong!</p>';
+                        echo '<p class="error">Email password combination is wrong!</p>';
                         $_SESSION['logged_in'] = FALSE;
 
                     }

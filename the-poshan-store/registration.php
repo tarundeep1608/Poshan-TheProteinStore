@@ -144,7 +144,7 @@
           <input type="password" id="txtPassword" placeholder="Enter password" name="password" required/>
           <p style="text-align: left;">Confirm Password :</p>
           <input type="password" id="txtConfirmPassword" placeholder="Re-Enter password" name="repassword" required />
-          <button type="submit" name="register" id="btnSubmit">Save Changes</button>
+          <button type="submit" name="register" id="btnSubmit">Register</button>
         </form><br>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
