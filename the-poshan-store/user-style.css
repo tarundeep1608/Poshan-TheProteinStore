@@ -1,0 +1,413 @@
+/*html tags over riding*/
+html{
+    scroll-behavior: smooth;
+}
+#loading
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("loader.gif") no-repeat fixed center;
+    z-index: 9999;
+}
+/*nav-bar*/
+.nav{
+    background-color:white;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px;
+    z-index: 1;
+    margin: -7px;
+
+}
+.navbar-brand
+{
+    position:absolute;
+    left:calc(50% - 30px);
+}
+.nav li
+{
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+    font-size: 0.9rem;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 30px ;
+
+}
+.nav li a
+{
+    color: black !important;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+}
+.nav:hover
+{
+    top:0;
+    width: 100%;
+    background:white;
+    transition: fade-in;
+    transition-delay: 1s;
+}
+.nav:hover li
+{
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+
+}
+.nav:hover li a
+{
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    color: black !important;
+}
+@media (max-width:992px)
+{
+    .nav:hover li
+    {
+        margin-left:10px;
+        padding-left: 0px;
+        padding-top: 15px;
+    }
+    .nav{
+        position: absolute;
+        top: 0%;
+        margin-left: 0%;
+        background-color:white;
+    }
+    .nav:hover
+    {
+        top:0;
+        width: 100%;
+        transition: fade-in;
+        transition-delay:  1s;
+    }
+    .navbar-brand
+    {
+        display: none;
+    }
+}
+.navbar-toggler{
+    border: 1px solid white !important;
+    color: white !important;
+}
+.sticky
+{
+    position: fixed;
+    top:0;
+    width: 100%;
+    background:white;
+    transition: fade-in;
+    transition-delay: 0.5s;
+}
+.sticky li
+{
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+
+}
+.sticky li a
+{
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    color: black !important;
+}
+/*breadcrump*/
+.breadcrumb{
+    color: black;
+    background-color: white;
+}
+.breadcrumb breadcrumb-item{
+    color: black;
+}
+/*title*/
+/*Title text styles*/
+.site-title
+{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3%;
+}
+.title-text
+{
+    font-family: Montserrat,sans-serif;
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+/*account*/
+.userwrapper
+{
+    height: 100%;
+    padding-bottom: 5rem;
+}
+.myaccount-tab-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.myaccount-tab-menu a {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    font-weight: 600;
+    font-size: 13px;
+    display: block;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+
+.myaccount-tab-menu a:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+.myaccount-tab-menu a:hover, .myaccount-tab-menu a.active {
+    background-color: #f7c142;
+    border-color: #f7c142;
+    color: #ffffff;
+}
+
+.myaccount-tab-menu a i.fa {
+    font-size: 14px;
+    text-align: center;
+    width: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+    #myaccountContent {
+        margin-top: 30px;
+    }
+}
+
+.myaccount-content {
+    border: 1px solid #eeeeee;
+    padding: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    .myaccount-content {
+        padding: 20px 15px;
+    }
+}
+
+.myaccount-content form {
+    margin-top: -20px;
+}
+
+.myaccount-content h3 {
+    font-size: 20px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.myaccount-content .welcome a:hover {
+    color: #f7c142;
+}
+
+.myaccount-content .welcome strong {
+    font-weight: 600;
+    color: #f7c142;
+}
+
+.myaccount-content fieldset {
+    margin-top: 20px;
+}
+
+.myaccount-content fieldset legend {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.myaccount-content .account-details-form {
+    margin-top: 50px;
+}
+
+.myaccount-content .account-details-form .single-input-item {
+    margin-bottom: 20px;
+}
+
+.myaccount-content .account-details-form .single-input-item label {
+    font-size: 14px;
+    text-transform: capitalize;
+    display: block;
+    margin: 0 0 5px;
+}
+
+.myaccount-content .account-details-form .single-input-item input {
+    border: 1px solid #e8e8e8;
+    height: 50px;
+    background-color: transparent;
+    padding: 2px 20px;
+    color: #1f2226;
+    font-size: 13px;
+}
+
+.myaccount-content .account-details-form .single-input-item input:focus {
+    border: 1px solid #343538;
+}
+
+.myaccount-content .account-details-form .single-input-item button {
+    border: none;
+    background-color: #f7c142;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 9px 25px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.myaccount-content .account-details-form .single-input-item button:hover {
+    background-color: #1f2226;
+}
+
+.myaccount-table {
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.myaccount-table table th,
+.myaccount-table .table th {
+    padding: 10px;
+    font-weight: 600;
+    background-color: #f8f8f8;
+    border-color: #ccc;
+    border-bottom: 0;
+    color: #1f2226;
+}
+
+.myaccount-table table td,
+.myaccount-table .table td {
+    padding: 10px;
+    vertical-align: middle;
+    border-color: #ccc;
+}
+.white-color{
+    color: black;
+    text-decoration: none;
+}
+.a{
+    text-color: white !important;
+    text-decoration: none !important;
+}
+.a:hover{
+    color: white !important;
+    text-decoration: none !important;
+}
+/*footer*/
+.footer {
+    padding:50px 0;
+    background-color: #f2f2f2;
+    color: #636363;
+}
+
+.footer h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.footer ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0;
+}
+.footer ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.6;
+}
+
+.footer ul a:hover {
+    opacity:0.8;
+}
+
+@media (max-width:767px) {
+    .footer .item:not(.social) {
+        text-align:center;
+        padding-bottom:20px;
+    }
+}
+
+.footer .item.text {
+    margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+    .footer .item.text {
+        margin-bottom:0;
+    }
+}
+
+.footer .item.text p {
+    opacity:0.6;
+    margin-bottom:0;
+}
+
+.footer .item.social {
+    text-align:center;
+}
+
+@media (max-width:991px) {
+    .footer .item.social {
+        text-align:center;
+        margin-top:20px;
+    }
+}
+
+.footer .item.social > a {
+    font-size:20px;
+    width:40px;
+    height:40px;
+    line-height:36px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+    margin:0 8px;
+    color:#fff;
+    opacity:0.75;
+}
+
+.footer .item.social > a:hover {
+    opacity:0.9;
+}
+
+.footer .copyright {
+    text-align:center;
+    padding-top:24px;
+    opacity:0.5;
+    font-size:13px;
+    margin-bottom:0;
+}
+
+
