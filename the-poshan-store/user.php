@@ -26,7 +26,7 @@
 <navbar>
     <nav class=" nav navbar navbar-expand-lg navbar-light py-3 sticky-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
+            <a class="navbar-brand" href="index.php"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#al-center-nav" aria-controls="al-center-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,21 +37,21 @@
                             Shop <span class="sr-only">(current)</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="pMenuDropdown">
-                            <a class="dropdown-item" href="protein-cat.html" >Protein Sachet's </a>
-                            <a class="dropdown-item" href="energy-cat.html">Energy Drinks</a>
-                            <a class="dropdown-item" href="index.html#featurette-title">Our best range</a>
+                            <a class="dropdown-item" href="protein-cat.php" >Protein Sachet's </a>
+                            <a class="dropdown-item" href="energy-cat.php">Energy Drinks</a>
+                            <a class="dropdown-item" href="index.php#featurette-title">Our best range</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="sMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community</a>
                         <div class="dropdown-menu" aria-labelledby="sMenuDropdown">
-                            <a class="dropdown-item" href="blog.html">Poshan Blog</a>
-                            <a class="dropdown-item" href="protein.html">Protein Calculator </a>
+                            <a class="dropdown-item" href="blog.php">Poshan Blog</a>
+                            <a class="dropdown-item" href="protein.php">Protein Calculator </a>
                             <a class="dropdown-item" href="contact.php">Contact Us </a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="philosophy.html">#poshtikbharat </a>
+                        <a class="nav-link" href="philosophy.php">#poshtikbharat </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -68,10 +68,22 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.php"><i class="fas fa-user"></i>    Account </a>
-                    </li>
+                    <?php
+
+                    if(isset($_SESSION['logged_in']))
+                    {
+                     echo '<a class="nav-link" href="user.php"><i class="fas fa-user"></i>
+                                           '.$_SESSION['username'].'</a>';
+                    }
+                    else
+                    {
+                    echo '<a class="nav-link" href="login.php"><i class="fas fa-user"></i>
+                                                               Account </a>';
+                    }
+                        ?>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i>    Cart </a>
+                        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>    Cart </a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +93,7 @@
 
 <!--breadcrump-->
 <ol class="breadcrumb" style="color: black">
-    <li class="breadcrumb-item"><a href="index.html" style="color: black">Home</a></li>
+    <li class="breadcrumb-item"><a href="index.php" style="color: black">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">My Account</li>
 </ol>
 <!--Site title entered-->

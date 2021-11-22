@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--  Custom CSS  -->
-    <link rel="stylesheet" href="protein-cat-style.css">
+    <link rel="stylesheet" href="energy-cat-style.css">
     <meta charset="UTF-8">
     <title>The Poshan Store</title>
     <link rel="shortcut icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1qXyYTD1ak7ifPbdxKtV0EgTqjuZJhZ2J"/>
@@ -27,7 +27,7 @@
 <navbar>
     <nav class=" nav navbar navbar-expand-lg navbar-light py-3 sticky-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
+            <a class="navbar-brand" href="index.php"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#al-center-nav" aria-controls="al-center-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,21 +38,21 @@
                             Shop <span class="sr-only">(current)</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="pMenuDropdown">
-                            <a class="dropdown-item" href="protein-cat.html">Protein Sachet's </a>
-                            <a class="dropdown-item" href="energy-cat.html">Energy Drinks</a>
-                            <a class="dropdown-item" href="index.html#featurette-title">Our best range</a>
+                            <a class="dropdown-item" href="protein-cat.php">Protein Sachet's </a>
+                            <a class="dropdown-item" href="energy-cat.php">Energy Drinks</a>
+                            <a class="dropdown-item" href="index.php#featurette-title">Our best range</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="sMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community</a>
                         <div class="dropdown-menu" aria-labelledby="sMenuDropdown">
-                            <a class="dropdown-item" href="blog.html">Poshan Blog</a>
-                            <a class="dropdown-item" href="protein.html">Protein Calculator </a>
+                            <a class="dropdown-item" href="blog.php">Poshan Blog</a>
+                            <a class="dropdown-item" href="protein.php">Protein Calculator </a>
                             <a class="dropdown-item" href="contact.php">Contact Us </a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="philosophy.html">#poshtikbharat </a>
+                        <a class="nav-link" href="philosophy.php">#poshtikbharat </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -61,18 +61,30 @@
                         <div class="dropdown">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                    <form class="px-1 py-1">
-                                        <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Search Here">
-                                    </form>
+                                <form class="px-1 py-1">
+                                    <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Search Here">
+                                </form>
 
                             </div>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.php"><i class="fas fa-user"></i>    Account </a>
-                    </li>
+                    <?php
+
+                    if(isset($_SESSION['logged_in']))
+                    {
+                     echo '<a class="nav-link" href="user.php"><i class="fas fa-user"></i>
+                                           '.$_SESSION['username'].'</a>';
+                    }
+                    else
+                    {
+                    echo '<a class="nav-link" href="login.php"><i class="fas fa-user"></i>
+                                                               Account </a>';
+                    }
+                        ?>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i>    Cart </a>
+                        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>    Cart </a>
                     </li>
                 </ul>
             </div>
@@ -81,33 +93,23 @@
 </navbar>
 <!--bread crump-->
 <ol class="breadcrumb" style="color: black">
-    <li class="breadcrumb-item"><a href="index.html" style="color: black">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Protein Powders</li>
+    <li class="breadcrumb-item"><a href="index.php" style="color: black">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Energy Drinks</li>
 </ol>
 
 <!--Site title entered-->
 <section id="site-title" class="site-title">
     <div class="title-text" > ALL PRODUCTS</div>
-    <div class="bottom-text" > The complete range of protein powders offered by Poshan! </div>
+    <div class="bottom-text" > The complete range of energy drinks offered by Poshan! </div>
 </section>
 
 <!--Cards for products-->
 <section id="producthighlight">
     <div id="product-card">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1JO5LFRtJIw2t6PCjQuUPGI_kj53yNTtb" alt="p1">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1li3P_7OkP0d-xqfjQSoSMz8biyw3z5h8" alt="e1">
             <div class="card-body ">
-                <p class="card-text"> Real Almond Chocolate protein</p>
-                <div id="buy-buttons">
-                <a href="#" class="btn cartbutton">Add to Cart</a>
-                <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1FSpwKMQQpfy2WKS3CtDcXP_5XRtfi-LF" alt="p2">
-            <div class="card-body ">
-                <p class="card-text"> Cold Coffee Lite flavor protein</p>
+                <p class="card-text"> Real Mango Energy drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -115,9 +117,9 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1XJQ-1ash8vr4a2FnUuyDrP8aBhLI7wRl" alt="p3">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=182Q43WkzsRv8e2dbxisWt1EufsXWdv7V" alt="e2">
             <div class="card-body ">
-                <p class="card-text"> Mango Shake flavor protein</p>
+                <p class="card-text"> Cold Coffee Energy Lite Drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -125,9 +127,20 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1G6qvsLoW1oL_FBE8ikKkdBRxgW5um8gv" alt="p4">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1xzCu5aSvfLo5lhf-GxxlxYCHc_0SkPLR" alt="e3">
             <div class="card-body ">
-                <p class="card-text"> Chocolate smoothie Lite protein</p>
+                <p class="card-text"> Real Apple Energy Drink</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1SAwxtG7Db7GoPxUy9ttjvDLuUxBZlvMB" alt="e4">
+            <div class="card-body ">
+                <p class="card-text"> Strawberry Smoothie Energy Drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -135,9 +148,9 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1yr-cnkQRxLDNYERMkAkMf26Lv7pWcOah" alt="p5">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1pUB58Fxklo5vpC_WVK8lS9pMyqC3JgHh" alt="e5">
             <div class="card-body ">
-                <p class="card-text"> Real Cold Coffee protein</p>
+                <p class="card-text"> Real Blueberry Energy Drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -145,9 +158,9 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1N9lIzeQig2U1sVuGPoqmc3tN4HIL96iA" alt="p6">
+            <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=18JmzFRCwzPBPZb8YiOipfyKxYDuR2oGv" alt="e6">
             <div class="card-body ">
-                <p class="card-text"> Real Haldi Badam protein</p>
+                <p class="card-text"> Lemon Soda flavor drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -155,9 +168,9 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1jGKEnd31eTrDRMrglpXKXUh7LAO8AIT-" alt="p7">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1looDoA6GMdFjGfzv5lu2ELwxy1tBFzdr" alt="e7">
             <div class="card-body ">
-                <p class="card-text"> Vegan Tangy Orange protein</p>
+                <p class="card-text"> Yummy Tangy Orange Drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -165,9 +178,9 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1-UNtxvbwv5hJ6vaUnt9cF0smz1OyIqYb" alt="p8">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1FWca4TRfdQ1oMCpjfAesTI28PuBD6u7S" alt="e8">
             <div class="card-body ">
-                <p class="card-text"> Vegan Zesty Lemon protein</p>
+                <p class="card-text">  Zesty Watermelon Energy Drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -175,9 +188,9 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1jOXjlbCnjhl6cAOCAjEh1e0K7M60p4sc" alt="p9">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1nXnOnvdqawdKPsVJq1Mfdo236hac2-lz" alt="e9">
             <div class="card-body ">
-                <p class="card-text"> Vegan Wild Berries protein</p>
+                <p class="card-text"> Real BCAA Energy Drink</p>
                 <div id="buy-buttons">
                     <a href="#" class="btn cartbutton">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
@@ -187,7 +200,6 @@
 
     </div>
 </section>
-
 <!--about app-->
 <section class="container-fluid " id="about-app">
     <div class="content title-text">
@@ -200,6 +212,7 @@
         </div>
     </div>
 </section>
+
 
 <!--footer-->
 <div class="footer">
@@ -402,7 +415,6 @@
         </div>
     </div>
 </div>
-
 <!--script for loading animation-->
 
 <script>

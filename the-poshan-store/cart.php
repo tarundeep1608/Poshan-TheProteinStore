@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--  Custom CSS  -->
-    <link rel="stylesheet" href="energy-cat-style.css">
+    <link rel="stylesheet" href="cart-style.css">
     <meta charset="UTF-8">
     <title>The Poshan Store</title>
     <link rel="shortcut icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1qXyYTD1ak7ifPbdxKtV0EgTqjuZJhZ2J"/>
@@ -21,13 +24,13 @@
 </head>
 <!-- main body starts here -->
 <body onload="loadfun()">
-<div id="loading"></div>
+<!--<div id="loading"></div> -->
 
 <!-- nav bar -->
 <navbar>
     <nav class=" nav navbar navbar-expand-lg navbar-light py-3 sticky-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
+            <a class="navbar-brand" href="index.php"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#al-center-nav" aria-controls="al-center-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,21 +41,21 @@
                             Shop <span class="sr-only">(current)</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="pMenuDropdown">
-                            <a class="dropdown-item" href="protein-cat.html">Protein Sachet's </a>
-                            <a class="dropdown-item" href="energy-cat.html">Energy Drinks</a>
-                            <a class="dropdown-item" href="index.html#featurette-title">Our best range</a>
+                            <a class="dropdown-item" href="protein-cat.php">Protein Sachet's </a>
+                            <a class="dropdown-item" href="energy-cat.php">Energy Drinks</a>
+                            <a class="dropdown-item" href="index.php#featurette-title">Our best range</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="sMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community</a>
                         <div class="dropdown-menu" aria-labelledby="sMenuDropdown">
-                            <a class="dropdown-item" href="blog.html">Poshan Blog</a>
-                            <a class="dropdown-item" href="protein.html">Protein Calculator </a>
+                            <a class="dropdown-item" href="blog.php">Poshan Blog</a>
+                            <a class="dropdown-item" href="protein.php">Protein Calculator </a>
                             <a class="dropdown-item" href="contact.php">Contact Us </a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="philosophy.html">#poshtikbharat </a>
+                        <a class="nav-link" href="philosophy.php">#poshtikbharat </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -69,139 +72,136 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.php"><i class="fas fa-user"></i>    Account </a>
-                    </li>
+                    <?php
+
+                    if(isset($_SESSION['logged_in']))
+                    {
+                     echo '<a class="nav-link" href="user.php"><i class="fas fa-user"></i>
+                                           '.$_SESSION['username'].'</a>';
+                    }
+                    else
+                    {
+                    echo '<a class="nav-link" href="login.php"><i class="fas fa-user"></i>
+                                                               Account </a>';
+                    }
+                        ?>
+                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i>    Cart </a>
+                        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>    Cart </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </navbar>
-<!--bread crump-->
-<ol class="breadcrumb" style="color: black">
-    <li class="breadcrumb-item"><a href="index.html" style="color: black">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Energy Drinks</li>
-</ol>
-
-<!--Site title entered-->
-<section id="site-title" class="site-title">
-    <div class="title-text" > ALL PRODUCTS</div>
-    <div class="bottom-text" > The complete range of energy drinks offered by Poshan! </div>
-</section>
-
-<!--Cards for products-->
-<section id="producthighlight">
-    <div id="product-card">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1li3P_7OkP0d-xqfjQSoSMz8biyw3z5h8" alt="e1">
-            <div class="card-body ">
-                <p class="card-text"> Real Mango Energy drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=182Q43WkzsRv8e2dbxisWt1EufsXWdv7V" alt="e2">
-            <div class="card-body ">
-                <p class="card-text"> Cold Coffee Energy Lite Drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1xzCu5aSvfLo5lhf-GxxlxYCHc_0SkPLR" alt="e3">
-            <div class="card-body ">
-                <p class="card-text"> Real Apple Energy Drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1SAwxtG7Db7GoPxUy9ttjvDLuUxBZlvMB" alt="e4">
-            <div class="card-body ">
-                <p class="card-text"> Strawberry Smoothie Energy Drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1pUB58Fxklo5vpC_WVK8lS9pMyqC3JgHh" alt="e5">
-            <div class="card-body ">
-                <p class="card-text"> Real Blueberry Energy Drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=18JmzFRCwzPBPZb8YiOipfyKxYDuR2oGv" alt="e6">
-            <div class="card-body ">
-                <p class="card-text"> Lemon Soda flavor drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1looDoA6GMdFjGfzv5lu2ELwxy1tBFzdr" alt="e7">
-            <div class="card-body ">
-                <p class="card-text"> Yummy Tangy Orange Drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1FWca4TRfdQ1oMCpjfAesTI28PuBD6u7S" alt="e8">
-            <div class="card-body ">
-                <p class="card-text">  Zesty Watermelon Energy Drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1nXnOnvdqawdKPsVJq1Mfdo236hac2-lz" alt="e9">
-            <div class="card-body ">
-                <p class="card-text"> Real BCAA Energy Drink</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
-            </div>
-        </div>
-
+<!--Shopping Cart-->
+<div class="px-4 px-lg-0">
+    <!-- Top Text -->
+    <div class="container text-black py-5 text-center">
+        <h1 class="display-4"><b>Your Cart</b></h1>
+        <p class="lead mb-0">Great choice! Sip on and get moving. </p>
     </div>
-</section>
-<!--about app-->
-<section class="container-fluid " id="about-app">
-    <div class="content title-text">
-        <h3> <span>Poshan</span> App is now available on both Google Playstore and Apple Store</h3>
-        <p>Download the App and Order your favorite protein flavor now!</p>
+    <!-- End -->
 
-        <div id="app-buttons">
-            <a href="#" class="app-button"> <i class="fab fa-apple"></i> App Store </a>
-            <a href="#" class="app-button"> <i class="fab fa-google-play"></i> Google Play </a>
+<!-- Cart ---->
+<div id="shopping-cart">
+<?php
+     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+     {
+         require 'config.php';
+
+         $username = $_SESSION['username'];
+
+         $fci  = "SELECT * FROM `cart` WHERE `username`='$username'";
+         $resultfci = mysqli_query($conn, $fci);
+
+         //find the number of records returned
+         $num = mysqli_num_rows($resultfci);
+
+         //displaying the rows returned by the sql query
+         if ($num > 0) {
+             //now fetching using while loop
+             while ($row = mysqli_fetch_assoc($resultfci))
+             {
+                 $pid = $row['id'];
+                 $pqn = $row['quantity'];
+
+                 $sql1 = "SELECT * FROM `tblproduct` WHERE `id`= '$pid'";
+                 $result1 = mysqli_query($conn, $sql1);
+                 $prdt = mysqli_fetch_assoc($result1);
+
+                 echo '<div class="cart-itm">
+                             <input type="hidden" name="proid" class="proid" value="'.$pid.'">
+                             <i class="fas fa-times" id="dfc" onclick="dfc(this)"></i>
+                             <div class="cart-itm-img">
+                                 <img src="'.$prdt['src1'].'" alt="cart-item-img">
+                             </div>
+                             <div class="cart-itm-details">
+                                 <p class="cart-itm-desc">
+                                 '.$prdt['name']. '
+                                 </p>
+                                 <div class="cart-itm-price">
+                                     <div class="item-qn">
+                                         <i class="fas fa-minus-circle deqn" onclick="decreaseQn(this),updateCart()"></i>
+                                         <input type="number" name="quantity" class="pqn" value="'.$pqn.'" readonly>
+                                         <i class="fas fa-plus-circle inqn" onclick="increaseQn(this),updateCart()"></i>
+                                         <b>X</b>
+                                     </div>
+                                     <div class="item-p">
+                                         <b>₹</b><span>'.$prdt['price'].'</span>
+                                     </div>
+                                     <div class="item-tp">
+                                         <b>₹</b><span></span>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>';
+             }
+         }
+     }
+?>
+
+</div>
+
+
+
+            <div class="row py-5 p-4 bg-white rounded shadow-sm">
+                <div class="col-lg-6">
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
+                    <div class="p-4">
+                        <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
+                        <div class="input-group mb-4 border rounded-pill p-2">
+                            <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
+                            <div class="input-group-append border-0">
+                                <button id="button-addon3" type="button" style="z-index:0; " class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
+                    <div class="p-4">
+                        <p class="font-italic mb-4">If you have any special request for us, please mention!</p>
+                        <textarea name="" cols="30" rows="2" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                    <div class="p-4">
+                        <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                                <h5 class="font-weight-bold">$400.00</h5>
+                            </li>
+                        </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</section>
-
-
+</div>
 <!--footer-->
 <div class="footer">
     <footer>

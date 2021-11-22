@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!-- Bootstrap, font-awesome kits, google fonts   -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/6706302c7d.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--  Custom CSS  -->
-    <link rel="stylesheet" href="product-style.css">
+    <link rel="stylesheet" href="philosophy-style.css">
     <meta charset="UTF-8">
     <title>The Poshan Store</title>
     <link rel="shortcut icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1qXyYTD1ak7ifPbdxKtV0EgTqjuZJhZ2J"/>
-
 </head>
-<!-- main body starts here -->
 <body onload="loadfun()">
 <div id="loading"></div>
-
-<!-- nav bar -->
 <navbar>
     <nav class=" nav navbar navbar-expand-lg navbar-light py-3 sticky-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
+            <a class="navbar-brand" href="index.php"><img src="https://drive.google.com/uc?export=view&id=1mMX9FxJ8WIE_2A1cGjG4zmyujhY9H-x0" style="width:160px;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#al-center-nav" aria-controls="al-center-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,21 +33,21 @@
                             Shop <span class="sr-only">(current)</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="pMenuDropdown">
-                            <a class="dropdown-item" href="protein-cat.html">Protein Sachet's </a>
-                            <a class="dropdown-item" href="energy-cat.html">Energy Drinks</a>
-                            <a class="dropdown-item" href="index.html#featurette-title">Our best range</a>
+                            <a class="dropdown-item" href="protein-cat.php">Protein Sachet's </a>
+                            <a class="dropdown-item" href="energy-cat.php">Energy Drinks</a>
+                            <a class="dropdown-item" href="index.php#featurette-title">Our best range</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="sMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community</a>
                         <div class="dropdown-menu" aria-labelledby="sMenuDropdown">
-                            <a class="dropdown-item" href="blog.html">Poshan Blog</a>
-                            <a class="dropdown-item" href="protein.html">Protein Calculator </a>
+                            <a class="dropdown-item" href="blog.php">Poshan Blog</a>
+                            <a class="dropdown-item" href="protein.php">Protein Calculator </a>
                             <a class="dropdown-item" href="contact.php">Contact Us </a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="philosophy.html">#poshtikbharat </a>
+                        <a class="nav-link" href="philosophy.php">#poshtikbharat </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -69,28 +64,56 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.php"><i class="fas fa-user"></i>    Account </a>
-                    </li>
+                    <?php
+
+                    if(isset($_SESSION['logged_in']))
+                    {
+                     echo '<a class="nav-link" href="user.php"><i class="fas fa-user"></i>
+                                           '.$_SESSION['username'].'</a>';
+                    }
+                    else
+                    {
+                    echo '<a class="nav-link" href="login.php"><i class="fas fa-user"></i>
+                                                               Account </a>';
+                    }
+                        ?>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i>    Cart </a>
+                        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>    Cart </a>
                     </li>
                 </ul>
             </div>
+
         </div>
     </nav>
 </navbar>
-<!--bread crump-->
 <ol class="breadcrumb" style="color: black">
-    <li class="breadcrumb-item"><a href="index.html" style="color: black">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Protein Powders</li>
+    <li class="breadcrumb-item"><a href="index.php" style="color: black">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Philosophy</li>
 </ol>
 
-<!--Site title entered-->
-<section id="site-title" class="site-title">
-    <div class="title-text" > ALL PRODUCTS</div>
-    <div class="bottom-text" > The complete range of protein powders offered by Poshan! </div>
-</section>
-<!--footer-->
+<div class="sitewide-title">
+    <h1 class="page-title" style="text-align: center; font-family: Montserrat, sans-serif; font-size: 50px;" >Our Philosophy</h1>
+</div>
+<div class="margin griditem">
+<div style="text-align: left">
+    <img src="https://drive.google.com/uc?export=view&id=1xYID5VRRKDs7bT5M_mvlxQuXgz9kWo5K" alt="photo1">
+</div>
+    <div style="text-align: left">
+        <img src="https://drive.google.com/uc?export=view&id=1f_etN4vNWX20TkCRO3DupEzN-h0UchJZ" alt="photo2">
+    </div>
+    <div style="text-align: left">
+    <img src="https://drive.google.com/uc?export=view&id=15ucyjIH7-hISl4EsoRPnezADDitXyZrL" alt="photo3">
+</div>
+<div style="text-align: left ">
+    <img src="https://drive.google.com/uc?export=view&id=168L-s5vRoLyeGUk6GOok3DqCQvgSCzJ6" alt="photo4">
+</div>
+<div style="text-align: left">
+    <img src="https://drive.google.com/uc?export=view&id=15CBmcTmpE08HjGb4169r0md0e9Jzq1I-" alt="photo5" >
+</div>
+
+
+<!--FOOTER-->
 <div class="footer">
     <footer>
         <div class="container">
@@ -128,9 +151,10 @@
                 <a href="#"><i class="fab fa-snapchat-square" style="color:black;"></i></a>
                 <a href="#"><i class="fab fa-instagram-square" style="color:black;"></i></a>
             </div>
-            <p class="copyright">Poshan © 2021</p>
+            <p class="copyright">Poshan ©2021</p>
         </div>
     </footer>
+</div>
 </div>
 <!--modal for tnc-->
 <div class="modal fade" id="tncmodal" tabindex="-1" role="dialog" aria-labelledby="tncmodaltitle" aria-hidden="true">
@@ -300,8 +324,7 @@
         load.style.display= 'none';
     }
 </script>
-
-<!--navbar script for scroll action-->
+<!--Navbar script for scroll action-->
 <script>
     window.onscroll = function() {myFunction()};
     var navbar = document.getElementById("navbar");
@@ -318,11 +341,11 @@
     }
 </script>
 
-<!--bootstrap scripts-->
+<!--Bootstrap Scripts-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<!--JQUERY CDN script-->
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

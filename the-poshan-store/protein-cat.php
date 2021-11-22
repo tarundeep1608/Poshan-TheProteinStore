@@ -13,316 +13,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--  Custom CSS  -->
-    <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="protein-cat-style.css">
     <meta charset="UTF-8">
     <title>The Poshan Store</title>
     <link rel="shortcut icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1qXyYTD1ak7ifPbdxKtV0EgTqjuZJhZ2J"/>
 
 </head>
 <!-- main body starts here -->
-
 <body onload="loadfun()">
 <div id="loading"></div>
-<!-- alert bar at the top -->
-<notification>
-    <div class="notification-bar alert alert-dismissible">
-        <div class="notification-bar-text" >
-            <a href="#" class="message"  >
-                <p ><strong>Clean food for a strong you!  Get an additional 10% off; use: POSHAN. Free shipping and COD available!</strong> </p>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span> </button>
-            </a>
-        </div>
-    </div>
-</notification>
 
 <!-- nav bar -->
 <navbar>
-<nav class=" nav navbar navbar-expand-lg navbar-light py-3 sticky-top" id="navbar">
-    <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#al-center-nav" aria-controls="al-center-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="al-center-nav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="pMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Shop <span class="sr-only">(current)</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="pMenuDropdown">
-                        <a class="dropdown-item" href="protein-cat.html">Protein Sachet's </a>
-                        <a class="dropdown-item" href="energy-cat.html">Energy Drinks</a>
-                        <a class="dropdown-item" href="#featurette-title">Our best range</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="sMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community</a>
-                    <div class="dropdown-menu" aria-labelledby="sMenuDropdown">
-                        <a class="dropdown-item" href="blog.html">Poshan Blog</a>
-                        <a class="dropdown-item" href="protein.html">Protein Calculator </a>
-                        <a class="dropdown-item" href="contact.php">Contact Us </a>
-                    </div>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="philosophy.html">#poshtikbharat </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search"></i>    Search </a>
-                    <div class="dropdown">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-                            <form class="px-1 py-1">
-                                <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Search Here">
-                            </form>
-
+    <nav class=" nav navbar navbar-expand-lg navbar-light py-3 sticky-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.php"><img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#al-center-nav" aria-controls="al-center-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="al-center-nav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Shop <span class="sr-only">(current)</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="pMenuDropdown">
+                            <a class="dropdown-item" href="protein-cat.php">Protein Sachet's </a>
+                            <a class="dropdown-item" href="energy-cat.php">Energy Drinks</a>
+                            <a class="dropdown-item" href="index.php#featurette-title">Our best range</a>
                         </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="user.php"><i class="fas fa-user"></i>    Account </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i>    Cart </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-</navbar>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="sMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community</a>
+                        <div class="dropdown-menu" aria-labelledby="sMenuDropdown">
+                            <a class="dropdown-item" href="blog.php">Poshan Blog</a>
+                            <a class="dropdown-item" href="protein.php">Protein Calculator </a>
+                            <a class="dropdown-item" href="contact.php">Contact Us </a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="philosophy.php">#poshtikbharat </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search"></i>    Search </a>
+                        <div class="dropdown">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-<!--Carousel placed-->
-<section id="carousel">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel" style=" margin-top:-105px; z-index:0 ">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1-4HqlSFzuqnqFHJI7HJIaDtmMZm0xk--" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1RfV6Ajz2h17QSGMjur7LJu7ZktBD7xRh" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1TtyTo_LsgBG-NRdLzuflNHWg-TSfzKbE" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=12HfUmMLZdEcxLjI5rSxC2XPxkesF9e-y" alt="Fourth slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://drive.google.com/uc?export=view&id=1l_tfauX1Z8f0HDtdnGREP5vP5VY3xdnQ" alt="Fifth slide">
+                                    <form class="px-1 py-1">
+                                        <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Search Here">
+                                    </form>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                    <?php
+
+                    if(isset($_SESSION['logged_in']))
+                    {
+                     echo '<a class="nav-link" href="user.php"><i class="fas fa-user"></i>
+                                           '.$_SESSION['username'].'</a>';
+                    }
+                    else
+                    {
+                    echo '<a class="nav-link" href="login.php"><i class="fas fa-user"></i>
+                                                               Account </a>';
+                    }
+                        ?>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>    Cart </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</section>
+    </nav>
+</navbar>
+<!--bread crump-->
+<ol class="breadcrumb" style="color: black">
+    <li class="breadcrumb-item"><a href="index.php" style="color: black">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Protein Powders</li>
+</ol>
 
 <!--Site title entered-->
 <section id="site-title" class="site-title">
-    <div class="title-text" > Clean Protein Powders for the Indian Everyday Athlete </div>
-    <div class="bottom-text" > Our products are designed on the back of hours of conversations with leading nutritionists, coaches and everyday athletes! </div>
+    <div class="title-text" > ALL PRODUCTS</div>
+    <div class="bottom-text" > The complete range of protein powders offered by Poshan! </div>
 </section>
 
 <!--Cards for products-->
 <section id="producthighlight">
     <div id="product-card">
         <div class="card" style="width: 18rem;">
-         <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1JO5LFRtJIw2t6PCjQuUPGI_kj53yNTtb" alt="p1">
-            <div class="card-body hide-card ">
-                <p class="card-text"> Real Almond Chocolate daily protein enriched with...<span> <a href="#" style=" color: black; text-decoration: none" >Show more</a></span></p>
-         </div>
-     </div>
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1JO5LFRtJIw2t6PCjQuUPGI_kj53yNTtb" alt="p1">
+            <div class="card-body ">
+                <p class="card-text"> Real Almond Chocolate protein</p>
+                <div id="buy-buttons">
+                <a href="#" class="btn cartbutton">Add to Cart</a>
+                <a href="#" class="btn cartbutton">Buy Now</a>
+                </div>
+            </div>
+        </div>
         <div class="card" style="width: 18rem;">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1FSpwKMQQpfy2WKS3CtDcXP_5XRtfi-LF" alt="p2">
-            <div class="card-body hide-card">
-                <p class="card-text"> Cold Coffee Lite flavor daily protein enriched with...<span> <a href="#" style=" color: black; text-decoration: none" >Show more</a></span></p>
+            <div class="card-body ">
+                <p class="card-text"> Cold Coffee Lite flavor protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
+                </div>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1XJQ-1ash8vr4a2FnUuyDrP8aBhLI7wRl" alt="p3">
-            <div class="card-body hide-card">
-                <p class="card-text"> Mango Shake flavor daily protein enriched with...<span> <a href="#" style=" color: black; text-decoration: none" >Show more</a></span></p>
+            <div class="card-body ">
+                <p class="card-text"> Mango Shake flavor protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
+                </div>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1G6qvsLoW1oL_FBE8ikKkdBRxgW5um8gv" alt="p4">
-            <div class="card-body hide-card">
-                <p class="card-text"> Chocolate smoothie Lite  daily protein enriched with...<span> <a href="#" style=" color: black; text-decoration: none" >Show more</a></span></p>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--separator image-->
-<section class="container-fluid" id="middle-separator">
-    <div id="separator">
-        <img src="https://drive.google.com/uc?export=view&id=1CZVEpWkzhI4PvKEYul49MAEhOcejUG_R" class="img-fluid" alt="middle image">
-    </div>
-</section>
-
-<!--product highlighter-->
-<section id="featurette-title" class="site-title">
-    <div class="featurette-title" > <font color="orange">THE BESTEST </font><font color="#4169e1"> BEST</font><font color="#006400"> OF POSHAN</font> </div>
-</section>
-<section id="product-highlighter">
-    <div class="container bcontent" id="card-one">
-        <div class="card" style="width: 90%;">
-            <div class="row no-gutters">
-                <div class="col-sm-5">
-                    <img class="card-img" src="https://drive.google.com/uc?export=view&id=1yr-cnkQRxLDNYERMkAkMf26Lv7pWcOah" alt="Product-5">
-                </div>
-                <div class="col-sm-7">
-                    <div class="card-body">
-                        <h3 class="card-title">COLD COFFEE PROTEIN</h3>
-                        <p class="card-text">
-                            A combination of:
-                            <br>- Natural protein from premium whey made with antibiotic-free cow’s milk, that strengthens & builds bones & muscles
-                            <br>- Turmeric (haldi) that boosts immunity and reduces swelling
-                            <br>- Ashwagandha and green tea extracts that boost energy</p>
-                        <a href="#" class="know-button" style="color:black;"> Know More </a>
-                    </div>
+            <div class="card-body ">
+                <p class="card-text"> Chocolate smoothie Lite protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
         </div>
-    </div>
-        <div class="container bcontent" id="card-two">
-            <div class="card" style="width: 90%;">
-                <div class="row no-gutters">
-                    <div class="col-sm-5">
-                        <img class="card-img" src="https://drive.google.com/uc?export=view&id=1N9lIzeQig2U1sVuGPoqmc3tN4HIL96iA" alt="Product-6">
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="card-body">
-                            <h3 class="card-title">HALDI BADAM PROTEIN</h3>
-                            <p class="card-text">
-                                 Protein to balance your diet and build your immunity
-
-                                <br>- 24 g of protein per sachet, perfect to bridge the gap in daily diet
-                                <br>- Derived from antibiotic free cow’s milk
-                                <br>- Turmeric extracts to build immunity
-                                <br>- Ashwagandha and Green Tea extract to give you an energy boost</p>
-                            <a href="#" class="know-button" style="color:black;"> Know More </a>
-                        </div>
-                    </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1yr-cnkQRxLDNYERMkAkMf26Lv7pWcOah" alt="p5">
+            <div class="card-body ">
+                <p class="card-text"> Real Cold Coffee protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
         </div>
-    <div class="container bcontent" id="card-one">
-        <div class="card" style="width: 90%;">
-            <div class="row no-gutters">
-                <div class="col-sm-5">
-                    <img class="card-img" src="https://drive.google.com/uc?export=view&id=1jGKEnd31eTrDRMrglpXKXUh7LAO8AIT-" alt="Product-7">
-                </div>
-                <div class="col-sm-7">
-                    <div class="card-body">
-                        <h3 class="card-title">VEGAN PEA PROTEIN</h3>
-                        <p class="card-text">A combination of
-                            <br>- Pure Pea Protein Isolates to strengthen bones & muscles
-                            <br>- Turmeric (haldi) that boosts immunity and reduces swelling
-                            <br>- Organic Spirulina - a rich source of antioxidants
-                            <br>- Green coffee extracts boosts your metabolism
-                            <br>- Probiotics for improved gut health</p>
-                        <a href="#" class="know-button" style="color:black;"> Know More </a>
-                    </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1N9lIzeQig2U1sVuGPoqmc3tN4HIL96iA" alt="p6">
+            <div class="card-body ">
+                <p class="card-text"> Real Haldi Badam protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!--testimonials carousel-->
-<section class="review" id="review">
-
-    <h1 class="title-text"> WHAT OTHER PEOPLE ARE SAYING ABOUT <img src="https://drive.google.com/uc?export=view&id=1garJPrb4KttpqlSeCTLbB07iqu6s4PXj" style="width:160px;"> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <div class="user">
-                <img src="https://drive.google.com/uc?export=view&id=1Q74Hx_zKm4PkiFI19jF34VCKIA1yiE_J" alt="">
-                <h3>Anshuman (Cross-fit Trainer)</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="comment">
-                    Being a crossfit trainer, it's critical to get clean protein to keep my fitness levels up. Poshan's hormone-free grass-fed whey shakes are a high quality source of protein for me.
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1jGKEnd31eTrDRMrglpXKXUh7LAO8AIT-" alt="p7">
+            <div class="card-body ">
+                <p class="card-text"> Vegan Tangy Orange protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
         </div>
-
-        <div class="box">
-            <div class="user">
-                <img src="https://drive.google.com/uc?export=view&id=14CIcVhOCWH5r7kq7rfRy5DDeEd2-5J6v" alt="">
-                <h3>Dr Trishala Chopra (N.D, A,M), Naturopathic Physician</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="comment">
-                    Loved the kesar badam! Amazing combination of kesar, nuts, whey protein and some amazing immunity boosting ingredients!
-
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1-UNtxvbwv5hJ6vaUnt9cF0smz1OyIqYb" alt="p8">
+            <div class="card-body ">
+                <p class="card-text"> Vegan Zesty Lemon protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
         </div>
-
-        <div class="box">
-            <div class="user">
-                <img src="https://drive.google.com/uc?export=view&id=1tP3J1oS0EdIkxrdF-FuRtM5J2TzgbeNA" alt="">
-                <h3>Swathi, CrossFit enthusiast</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="comment">
-                    "Poshan has made my regimen a joy! Seeing great results with Shape Shake. 26g of natural protein per sachet for the win! Loved the kesar badam! "
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1jOXjlbCnjhl6cAOCAjEh1e0K7M60p4sc" alt="p9">
+            <div class="card-body ">
+                <p class="card-text"> Vegan Wild Berries protein</p>
+                <div id="buy-buttons">
+                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
         </div>
 
     </div>
-
 </section>
 
 <!--about app-->
 <section class="container-fluid " id="about-app">
-        <div class="content title-text">
-            <h3> <span>Poshan</span> App is now available on both Google Playstore and Apple Store</h3>
-            <p>Download the App and Order your favorite protein flavor now!</p>
+    <div class="content title-text">
+        <h3> <span>Poshan</span> App is now available on both Google Playstore and Apple Store</h3>
+        <p>Download the App and Order your favorite protein flavor now!</p>
 
-            <div id="app-buttons">
-                <a href="#" class="app-button"> <i class="fab fa-apple"></i> App Store </a>
-                <a href="#" class="app-button"> <i class="fab fa-google-play"></i> Google Play </a>
-            </div>
+        <div id="app-buttons">
+            <a href="#" class="app-button"> <i class="fab fa-apple"></i> App Store </a>
+            <a href="#" class="app-button"> <i class="fab fa-google-play"></i> Google Play </a>
         </div>
-</section>
-
-<!--philosophy section-->
-<section id="philosophy" class="philosophy-title">
-    <div class="title-text-philosophy" > The Poshan Philosophy </div>
-    <div class="bottom-text-philosophy" > There is no secret ingredient! </div>
-    <div class="bottom-text-philosophy" id="#know-more"><a href="philosophy.html" class="know-button" style="color:black;"> Know More </a> </div>
+    </div>
 </section>
 
 <!--footer-->
-  <div class="footer">
+<div class="footer">
     <footer>
         <div class="container">
             <div class="row">
@@ -362,7 +254,7 @@
             <p class="copyright">Poshan © 2021</p>
         </div>
     </footer>
-  </div>
+</div>
 <!--modal for tnc-->
 <div class="modal fade" id="tncmodal" tabindex="-1" role="dialog" aria-labelledby="tncmodaltitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -522,13 +414,14 @@
         </div>
     </div>
 </div>
+
 <!--script for loading animation-->
 
 <script>
     var load= document.getElementById("loading");
     function loadfun()
     {
-     load.style.display= 'none';
+        load.style.display= 'none';
     }
 </script>
 
