@@ -174,13 +174,13 @@ session_start();
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <div class="single-input-item">
-                                                                 <span>Name</span>
+                                                                 <span><?php echo $_SESSION['username']; ?></span>
                                                                 </div>
                                                             </div>
                                                         </div>
 
                                                         <div class="single-input-item">
-                                                             <span> Email Address</span>
+                                                             <span><?php echo $_SESSION['email']; ?></span>
                                                         </div>
                                                          <fieldset>
                                                        <h3>Change your password</h3>

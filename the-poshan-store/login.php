@@ -134,6 +134,7 @@ session_start();
                         $_SESSION['user_id'] = $result['id'];
                         $_SESSION['logged_in'] = TRUE;
                         $_SESSION['username'] = $result['username'];
+                        $_SESSION['email'] = $result['email'];
                         echo '<script type="text/javascript">';
                         echo 'window.location.href = "index.php";';
                         echo '</script>';
