@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,7 +114,8 @@
             <div class="card-body ">
                 <p class="card-text"> Real Mango Energy drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                     <input type="text" value="1" name="pid">
+                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -121,7 +125,8 @@
             <div class="card-body ">
                 <p class="card-text"> Cold Coffee Energy Lite Drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                     <input type="text" value="1" name="pid">
+                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -131,7 +136,8 @@
             <div class="card-body ">
                 <p class="card-text"> Real Apple Energy Drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <input type="text" value="1" name="pid">
+                    <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -142,7 +148,8 @@
             <div class="card-body ">
                 <p class="card-text"> Strawberry Smoothie Energy Drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                     <input type="text" value="1" name="pid">
+                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -152,7 +159,8 @@
             <div class="card-body ">
                 <p class="card-text"> Real Blueberry Energy Drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                     <input type="text" value="3" name="pid">
+                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -162,7 +170,8 @@
             <div class="card-body ">
                 <p class="card-text"> Lemon Soda flavor drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                     <input type="text" value="1" name="pid">
+                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -172,7 +181,8 @@
             <div class="card-body ">
                 <p class="card-text"> Yummy Tangy Orange Drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                     <input type="text" value="1" name="pid">
+                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -182,7 +192,8 @@
             <div class="card-body ">
                 <p class="card-text">  Zesty Watermelon Energy Drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                    <input type="text" value="1" name="pid">
+                    <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -192,7 +203,8 @@
             <div class="card-body ">
                 <p class="card-text"> Real BCAA Energy Drink</p>
                 <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
+                     <input type="text" value="2" name="pid">
+                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
                     <a href="#" class="btn cartbutton">Buy Now</a>
                 </div>
             </div>
@@ -415,6 +427,26 @@
         </div>
     </div>
 </div>
+<!--script for cart-->
+<script>
+//add product to cart script
+function atc(e) {
+    let proid = e.parentElement.querySelector('input[name=pid]').value;
+    console.log(proid);
+
+    $.ajax({
+        url: 'addptc.php',
+        method: 'POST',
+        data: {
+            addptc: true,
+            pid: proid,
+        },
+        success: function (data) {
+            console.log(data);
+        }
+    });
+}
+</script>
 <!--script for loading animation-->
 
 <script>

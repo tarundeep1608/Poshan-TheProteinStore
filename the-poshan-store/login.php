@@ -119,7 +119,7 @@ session_start();
         <span><a href="#" style="text-decoration: none; color: black; "><p>Forgot Password?</p></a></span>
         <br>
         <?php
-            include('config.php');
+            include('database.php');
             if (isset($_POST['login_button'])) {
                 $email = $_POST['email'];
                 $password = $_POST['password'];

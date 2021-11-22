@@ -106,14 +106,14 @@ session_start();
 <!-- Cart ---->
 <div id="shopping-cart">
 <?php
-     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
      {
          require 'config.php';
 
          $username = $_SESSION['username'];
 
          $fci  = "SELECT * FROM `cart` WHERE `username`='$username'";
-         $resultfci = mysqli_query($conn, $fci);
+         $resultfci = mysqli_query($connection, $fci);
 
          //find the number of records returned
          $num = mysqli_num_rows($resultfci);
@@ -127,14 +127,14 @@ session_start();
                  $pqn = $row['quantity'];
 
                  $sql1 = "SELECT * FROM `tblproduct` WHERE `id`= '$pid'";
-                 $result1 = mysqli_query($conn, $sql1);
+                 $result1 = mysqli_query($connection, $sql1);
                  $prdt = mysqli_fetch_assoc($result1);
-
+                 $total= $pqn*$prdt['price'];
                  echo '<div class="cart-itm">
                              <input type="hidden" name="proid" class="proid" value="'.$pid.'">
                              <i class="fas fa-times" id="dfc" onclick="dfc(this)"></i>
                              <div class="cart-itm-img">
-                                 <img src="'.$prdt['src1'].'" alt="cart-item-img">
+                                 <img src="'.$prdt['image'].'" alt="cart-item-img">
                              </div>
                              <div class="cart-itm-details">
                                  <p class="cart-itm-desc">
@@ -166,42 +166,42 @@ session_start();
 
 
             <div class="row py-5 p-4 bg-white rounded shadow-sm">
-                <div class="col-lg-6">
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
-                    <div class="p-4">
-                        <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
-                        <div class="input-group mb-4 border rounded-pill p-2">
-                            <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
-                            <div class="input-group-append border-0">
-                                <button id="button-addon3" type="button" style="z-index:0; " class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
-                    <div class="p-4">
-                        <p class="font-italic mb-4">If you have any special request for us, please mention!</p>
-                        <textarea name="" cols="30" rows="2" class="form-control"></textarea>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
-                    <div class="p-4">
-                        <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
-                        <ul class="list-unstyled mb-4">
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                                <h5 class="font-weight-bold">$400.00</h5>
-                            </li>
-                        </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
-                    </div>
-                </div>
-            </div>
+                           <div class="col-lg-6">
+                               <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
+                               <div class="p-4">
+                                   <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
+                                   <div class="input-group mb-4 border rounded-pill p-2">
+                                       <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
+                                       <div class="input-group-append border-0">
+                                           <button id="button-addon3" type="button" style="z-index:0; " class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
+                               <div class="p-4">
+                                   <p class="font-italic mb-4">If you have any special request for us, please mention!</p>
+                                   <textarea name="" cols="30" rows="2" class="form-control"></textarea>
+                               </div>
+                           </div>
+                           <div class="col-lg-6">
+                               <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                               <div class="p-4">
+                                   <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+                                   <ul class="list-unstyled mb-4">
+                                       <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong id="totalAmountRaw">₹0.00</strong></li>
+                                       <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>₹100.00</strong></li>
+                                       <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>₹189.00</strong></li>
+                                       <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                                        <h5 class="font-weight-bold"  id="totalAmount">₹0.00</h5>
+                                       </li>
+                                   </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
+                               </div>
+                           </div>
+                       </div>
 
-        </div>
-    </div>
-</div>
+                   </div>
+               </div>
+           </div>
 <!--footer-->
 <div class="footer">
     <footer>
@@ -429,7 +429,129 @@ session_start();
         }
     }
 </script>
+<script>
+//function to increase quantity of a item in cart
+function increaseQn(e) {
+    let input = e.parentElement.querySelector('input');
+    // console.log(input);
 
+    let inputVal = input.value;
+    // console.log(inputVal);
+    inputVal++;
+
+    input.value = inputVal;
+
+    let proid = e.parentElement.parentElement.parentElement.parentElement.querySelector('input[name=proid]').value;
+
+    console.log("Increasing quantity of product with id " + proid);
+
+    $.ajax({
+        url: 'quantity.php',
+        method: 'POST',
+        data: {
+            pid: proid,
+            pqn: input.value,
+        },
+        success: function (data) {
+             console.log(data);
+        }
+    });
+
+}
+</script>
+<script>
+//function to decrease quantity of a item in cart
+function decreaseQn(e) {
+    let input = e.parentElement.querySelector('input');
+    // console.log(input);
+
+    let inputVal = input.value;
+    // console.log(inputVal);
+
+    if (inputVal > 0) {
+        inputVal--;
+    }
+
+    input.value = inputVal;
+
+    let proid = e.parentElement.parentElement.parentElement.parentElement.querySelector('input[name=proid]').value;
+
+    // console.log("Decreasing quantity of product with id " + proid);
+    $.ajax({
+        url: 'quantity.php',
+        method: 'POST',
+        data: {
+            pid: proid,
+            pqn: input.value,
+        },
+        success: function (data) {
+            // console.log(data);
+        }
+    });
+}
+</script>
+<script>
+// function to update cart amount
+function updateCart() {
+    let itemPriceDiv = document.querySelectorAll('.cart-itm .cart-itm-details .cart-itm-price')
+
+    itemPriceDiv.forEach(element => {
+        let itemqn = parseInt(element.querySelector('.item-qn input').value);
+        // console.log(itemqn);
+
+        let itemp = parseInt(element.querySelector('.item-p span').innerHTML);
+        // console.log(itemp);
+
+        let itemTp = element.querySelector('.item-tp span');
+        // console.log(itemTp);
+        itemTp.innerHTML = itemqn * itemp;
+
+        // console.log("total Price");
+        // console.log(itemTp.innerHTML);
+    });
+
+    let itemTp = document.querySelectorAll(' .cart-itm .cart-itm-details .cart-itm-price .item-tp span')
+
+    // console.log(itemTp);
+    let sum = 0;
+
+    //calculating the total price
+    itemTp.forEach(element => {
+        let p = parseInt(element.innerHTML);
+        sum += p;
+    });
+
+    // console.log(sum);
+
+    let totalAmountRaw = document.getElementById('totalAmountRaw');
+      console.log(totalAmountRaw);
+        totalAmountRaw.innerHTML = sum;
+        console.log(totalAmountRaw.innerHTML);
+        let totalAmount = document.getElementById('totalAmount');
+                totalAmount.innerHTML = (sum+289);
+                console.log(totalAmount.innerHTML);
+
+}
+</script>
+<script>
+//remove product from cart script
+function dfc(e) {
+    let proid = e.parentElement.querySelector('input[name=proid]').value;
+
+    $.ajax({
+        url: 'remove.php',
+        method: 'POST',
+        data: {
+            removepfc: true,
+            pid: proid,
+        },
+        success: function (data) {
+            console.log(data);
+            location.reload();
+        }
+    });
+}
+</script>
 <!--bootstrap scripts-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
