@@ -106,12 +106,26 @@
 
       <div class="left-column">
 
+        <?php
 
-        <img data-image="orange" src="drink1-orange.jpeg" alt="" >
-        <img data-image="strawberry" src="drink2-strawberry.jpeg" alt="" >
-        <img data-image="apple" src="drink3-apple.jpeg" alt="" >
-        <img data-image="lemon" class="active" src="drink4-lemon.jpeg" alt="" >
-        <img data-image="berry" src="drink5-berry.jpeg" alt="" >
+                 require 'config.php';
+                 if(isset($_POST['pid']))
+                 {
+                  $id= $_POST['pid'];
+                 $fci  = "SELECT * FROM `tblproduct` WHERE `id`=$id";
+                 $resultfci = mysqli_query($connection, $fci);
+
+                 //find the number of records returned
+                 $num = mysqli_num_rows($resultfci);
+                 $row = mysqli_fetch_assoc($resultfci);
+
+
+                 }
+
+        ?>
+
+         <img class="left-image" src="<?php echo $row['image']; ?>">
+
 
       </div>
 
@@ -120,44 +134,13 @@
       <div class="right-column">
         <div class="product-description">
           <span>The Poshan Store</span>
-          <h1>Energy Drink</h1>
+          <h1><?php echo $row['name']; ?></h1>
         <div class="product-configuration">
-
-          <!-- Product Color -->
-          <div class="product-color">
-            <span>Flavour</span>
-
-            <div class="color-choose">
-              <div>
-                <input data-image="apple" type="radio" id="apple" name="color" value="apple">
-                <label for="apple"><span></span></label>
-              </div>
-              <div>
-                <input data-image="strawberry" type="radio" id="strawberry" name="color" value="strawberry">
-                <label for="strawberry"><span></span></label>
-              </div>
-              <div>
-                <input data-image="orange" type="radio" id="orange" name="color" value="orange">
-                <label for="orange"><span></span></label>
-              </div>
-              <div>
-                <input data-image="lemon" type="radio" id="lemon" name="color" value="lemon" checked>
-                <label for="lemon"><span></span></label>
-              </div>
-              <div>
-                <input data-image="berry" type="radio" id="berry" name="color" value="berry">
-                <label for="berry"><span></span></label>
-              </div>
-            </div>
-
-          </div>
 
         <!-- Product Description -->
           <p><b>Product Details</b><br><br>
             <b>Key Features</b><br>
-            An energy drink with amazingly refreshing taste
-            It contains caffeine, tourine and B-vitamins that stimulates the mind and energizes the body
-            Also invigorates your taste buds with its refreshingly delicious flavour
+            <?php echo $row['code']; ?>
             <br><br><b>Shelf Life :</b>
             5 months<br><br>
             <b>Unit :</b>
@@ -171,9 +154,12 @@
     
         <!-- Product Pricing -->
         <div class="product-price hover">
-          <span><b>Price :</b>50$</span>
-          <a href="#" class="cartbutton">Add to cart</a><br>
-          <a href="#" class="cartbutton">Buy Now</a>
+          <span><b>Price :</b> ₹<?php echo $row['price']; ?></span>
+          <?php
+           echo '<input type="hidden" value="'.$id.'" name="pid">';
+          ?>
+
+          <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a><br>
         </div>
       </div>
     </main>
@@ -219,7 +205,7 @@
               <a href="#"><i class="fab fa-snapchat-square" style="color:black;"></i></a>
               <a href="#"><i class="fab fa-instagram-square" style="color:black;"></i></a>
           </div>
-          <p class="copyright" style="margin: 0 0 15px 0;"">Poshan © 2021</p>
+          <p class="copyright" style="margin: 0 0 15px 0;">Poshan © 2021</p>
       </div>
   </footer>
 </div>
@@ -408,11 +394,31 @@
       }
   }
 </script>
+<script>
+//add product to cart script
+function atc(e) {
+    let proid = e.parentElement.querySelector('input[name=pid]').value;
+    console.log(proid);
 
+    $.ajax({
+        url: 'addptc.php',
+        method: 'POST',
+        data: {
+            addptc: true,
+            pid: proid,
+        },
+        success: function (data) {
+            console.log(data);
+        }
+    });
+}
+</script>
 <!--bootstrap scripts-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!--JQUERY CDN script-->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
   </body>
 </html>

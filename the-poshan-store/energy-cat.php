@@ -109,104 +109,145 @@ session_start();
 <!--Cards for products-->
 <section id="producthighlight">
     <div id="product-card">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; ">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1li3P_7OkP0d-xqfjQSoSMz8biyw3z5h8" alt="e1">
             <div class="card-body ">
                 <p class="card-text"> Real Mango Energy drink</p>
-                <div id="buy-buttons">
-                     <input type="text" value="1" name="pid">
+                  <form action="product-desc.php" method="POST">
+                    <div id="buy-buttons">
+                     <input type="hidden" value="6" name="pid">
                      <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                     <button type="submit" class="btn cartbutton">View</a>
+                     </form>
                 </div>
             </div>
         </div>
+
+
         <div class="card" style="width: 18rem;">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=182Q43WkzsRv8e2dbxisWt1EufsXWdv7V" alt="e2">
             <div class="card-body ">
                 <p class="card-text"> Cold Coffee Energy Lite Drink</p>
+                   <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                     <input type="text" value="1" name="pid">
+                     <input type="hidden" value="4" name="pid">
                      <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                     <button type="submit" class="btn cartbutton">View</a>
+
+                  </form>
+                  </div>
             </div>
         </div>
+
+
         <div class="card" style="width: 18rem;">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1xzCu5aSvfLo5lhf-GxxlxYCHc_0SkPLR" alt="e3">
             <div class="card-body ">
                 <p class="card-text"> Real Apple Energy Drink</p>
+                   <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                    <input type="text" value="1" name="pid">
+                    <input type="hidden" value="1" name="pid">
                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                     <button type="submit" class="btn cartbutton">View</a>
+
+                 </form>
+                  </div>
             </div>
         </div>
+
 
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1SAwxtG7Db7GoPxUy9ttjvDLuUxBZlvMB" alt="e4">
             <div class="card-body ">
                 <p class="card-text"> Strawberry Smoothie Energy Drink</p>
+                   <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                     <input type="text" value="1" name="pid">
+                     <input type="hidden" value="9" name="pid">
                      <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                     <button type="submit" class="btn cartbutton">View</a>
+
+                 </form>
+                 </div>
             </div>
         </div>
+
+    
         <div class="card" style="width: 18rem;">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1pUB58Fxklo5vpC_WVK8lS9pMyqC3JgHh" alt="e5">
             <div class="card-body ">
                 <p class="card-text"> Real Blueberry Energy Drink</p>
+                   <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                     <input type="text" value="3" name="pid">
+                     <input type="hidden" value="3" name="pid">
                      <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                     <button type="submit" class="btn cartbutton">View</a>
+
+                 </form>
+                  </div>
             </div>
         </div>
+
+
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=18JmzFRCwzPBPZb8YiOipfyKxYDuR2oGv" alt="e6">
             <div class="card-body ">
                 <p class="card-text"> Lemon Soda flavor drink</p>
+                   <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                     <input type="text" value="1" name="pid">
+                     <input type="hidden" value="5" name="pid">
                      <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                     <button type="submit" class="btn cartbutton">View</a>
+
+                </form>
+                 </div>
             </div>
         </div>
+
+
         <div class="card" style="width: 18rem;">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1looDoA6GMdFjGfzv5lu2ELwxy1tBFzdr" alt="e7">
             <div class="card-body ">
                 <p class="card-text"> Yummy Tangy Orange Drink</p>
+                <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                     <input type="text" value="1" name="pid">
+                     <input type="hidden" value="8" name="pid">
                      <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                     <button type="submit" class="btn cartbutton">View</a>
+
+                  </form>
+                  </div>
             </div>
         </div>
+
+
         <div class="card" style="width: 18rem;">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1FWca4TRfdQ1oMCpjfAesTI28PuBD6u7S" alt="e8">
             <div class="card-body ">
                 <p class="card-text">  Zesty Watermelon Energy Drink</p>
+                   <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                    <input type="text" value="1" name="pid">
+                    <input type="hidden" value="7" name="pid">
                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                    <button type="submit" class="btn cartbutton">View</a>
+
+                  </form>
+                     </div>
             </div>
         </div>
+
+
         <div class="card" style="width: 18rem;">
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1nXnOnvdqawdKPsVJq1Mfdo236hac2-lz" alt="e9">
             <div class="card-body ">
                 <p class="card-text"> Real BCAA Energy Drink</p>
+                   <form action="product-desc.php" method="POST">
                 <div id="buy-buttons">
-                     <input type="text" value="2" name="pid">
+                     <input type="hidden" value="2" name="pid">
                      <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
-                </div>
+                   <button type="submit" class="btn cartbutton">View</a>
+
+                  </form>
+                   </div>
             </div>
         </div>
 
@@ -447,6 +488,7 @@ function atc(e) {
     });
 }
 </script>
+
 <!--script for loading animation-->
 
 <script>

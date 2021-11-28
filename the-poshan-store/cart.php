@@ -194,7 +194,7 @@ session_start();
                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                                         <h5 class="font-weight-bold"  id="totalAmount">₹0.00</h5>
                                        </li>
-                                   </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
+                                   </ul><button onclick="location.href = 'check-page.php';" id="checkout" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
                                </div>
                            </div>
                        </div>
@@ -551,6 +551,25 @@ function dfc(e) {
         }
     });
 }
+</script>
+<script type="text/javascript">
+function check(e) {
+     let totalAmount = document.getElementById('totalAmount').value;
+
+    $.ajax({
+        url: "TxnTest.php",
+        method: 'POST',
+        data: {
+
+            totalAmount : totalAmount
+        },
+        success: function (data) {
+            console.log(data);
+            location.reload();
+        }
+    });
+}
+
 </script>
 <!--bootstrap scripts-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

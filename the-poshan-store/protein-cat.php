@@ -113,9 +113,13 @@ session_start();
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1JO5LFRtJIw2t6PCjQuUPGI_kj53yNTtb" alt="p1">
             <div class="card-body ">
                 <p class="card-text"> Real Almond Chocolate protein</p>
-                <div id="buy-buttons">
-                <a href="#" class="btn cartbutton">Add to Cart</a>
-                <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="10" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -123,9 +127,13 @@ session_start();
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1FSpwKMQQpfy2WKS3CtDcXP_5XRtfi-LF" alt="p2">
             <div class="card-body ">
                 <p class="card-text"> Cold Coffee Lite flavor protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="11" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -133,9 +141,13 @@ session_start();
             <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1XJQ-1ash8vr4a2FnUuyDrP8aBhLI7wRl" alt="p3">
             <div class="card-body ">
                 <p class="card-text"> Mango Shake flavor protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="12" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -143,9 +155,13 @@ session_start();
             <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1G6qvsLoW1oL_FBE8ikKkdBRxgW5um8gv" alt="p4">
             <div class="card-body ">
                 <p class="card-text"> Chocolate smoothie Lite protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="13" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -153,9 +169,13 @@ session_start();
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1yr-cnkQRxLDNYERMkAkMf26Lv7pWcOah" alt="p5">
             <div class="card-body ">
                 <p class="card-text"> Real Cold Coffee protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="14" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -163,9 +183,13 @@ session_start();
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1N9lIzeQig2U1sVuGPoqmc3tN4HIL96iA" alt="p6">
             <div class="card-body ">
                 <p class="card-text"> Real Haldi Badam protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="15" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -173,9 +197,13 @@ session_start();
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1jGKEnd31eTrDRMrglpXKXUh7LAO8AIT-" alt="p7">
             <div class="card-body ">
                 <p class="card-text"> Vegan Tangy Orange protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="16" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -183,9 +211,13 @@ session_start();
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1-UNtxvbwv5hJ6vaUnt9cF0smz1OyIqYb" alt="p8">
             <div class="card-body ">
                 <p class="card-text"> Vegan Zesty Lemon protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="17" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -193,9 +225,13 @@ session_start();
             <img class="card-img-top " src="https://drive.google.com/uc?export=view&id=1jOXjlbCnjhl6cAOCAjEh1e0K7M60p4sc" alt="p9">
             <div class="card-body ">
                 <p class="card-text"> Vegan Wild Berries protein</p>
-                <div id="buy-buttons">
-                    <a href="#" class="btn cartbutton">Add to Cart</a>
-                    <a href="#" class="btn cartbutton">Buy Now</a>
+                 <form action="product-desc.php" method="POST">
+                                <div id="buy-buttons">
+                                     <input type="hidden" value="18" name="pid">
+                                     <a href="#" class="btn cartbutton" onclick="atc(this)">Add to Cart</a>
+                                     <button type="submit" class="btn cartbutton">View</a>
+
+                                 </form>
                 </div>
             </div>
         </div>
@@ -443,6 +479,26 @@ session_start();
             navbar.classList.remove("sticky");
         }
     }
+</script>
+<!--script for cart-->
+<script>
+//add product to cart script
+function atc(e) {
+    let proid = e.parentElement.querySelector('input[name=pid]').value;
+    console.log(proid);
+
+    $.ajax({
+        url: 'addptc.php',
+        method: 'POST',
+        data: {
+            addptc: true,
+            pid: proid,
+        },
+        success: function (data) {
+            console.log(data);
+        }
+    });
+}
 </script>
 
 <!--bootstrap scripts-->

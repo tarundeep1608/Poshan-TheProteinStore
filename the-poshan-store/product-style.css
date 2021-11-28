@@ -163,18 +163,14 @@ html{
 }
 
 
-/* Left Column */
-.left-column img {
-  width: 92%;
+
+.left-image {
+  width: 80%;
   position: absolute;
   left: -11px;
   top: 67px;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.left-column img.active {
   opacity: 1;
+  transition: all 0.3s ease;
 }
 
 
@@ -218,51 +214,6 @@ html{
 /* Product Color */
 .product-color {
   margin-bottom: 30px;
-}
-
-.color-choose div {
-  display: inline-block;
-}
-
-.color-choose input[type="radio"] {
-  display: none;
-}
-
-.color-choose input[type="radio"] + label span {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin: -1px 4px 0 0;
-  vertical-align: middle;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.color-choose input[type="radio"] + label span {
-  border: 2px solid #FFFFFF;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
-}
-
-.color-choose input[type="radio"]#apple + label span {
-  background-color: #1a9c21;
-}
-.color-choose input[type="radio"]#strawberry + label span {
-  background-color:pink;
-}
-.color-choose input[type="radio"]#orange + label span {
-  background-color: orange;
-}
-.color-choose input[type="radio"]#lemon + label span {
-  background-color:rgb(165, 248, 176);
-}
-.color-choose input[type="radio"]#berry + label span {
-  background-color:rgb(133, 134, 192);
-}
-
-.color-choose input[type="radio"]:checked + label span {
-  background-image: url(images/check-icn.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 
